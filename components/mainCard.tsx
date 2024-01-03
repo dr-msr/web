@@ -26,7 +26,7 @@ function RenderDay() {
 
 	  
 	return (
-		<Card className="mt-10 bg-gray aspect-square">
+		<Card className="mt-10 bg-gray aspect-auto">
 			<div className="p-10">
 			<code>
 				<p><span style={{color:'#2e95d3'}}>type</span> <span style={{color:'#f22c3d'}}>DailyRoutine</span> = <span style={{color:'#00a67d'}}>'day'</span> | <span style={{color:'#00a67d'}}>'night'</span>;</p>
