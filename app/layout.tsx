@@ -1,10 +1,13 @@
+
+
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Ubuntu_Mono  } from 'next/font/google'
 import './globals.css'
 import { Inter as FontSans } from "next/font/google"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useNavigation } from '@/lib/navi'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Ubuntu_Mono({ subsets: ['latin'], weight:['400'] })
 
 export const metadata: Metadata = {
   title: 'drmsr.dev',
@@ -22,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		} else {
 			return 'light' 	}
 	}
+
 	
   return (
     <html lang="en" className={RenderDay()}>

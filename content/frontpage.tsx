@@ -1,23 +1,15 @@
-import React, { ReactNode } from "react";
-
-interface headerProps {
-	isSticky: boolean;
-  }
-
+import NaviItem from "@/components/frontpageMenu";
+import FrontpageMenu from "@/components/frontpageMenu";
+import Menu from "@/components/frontpageMenu";
+import { FC } from "react";
 
 
-const Header: React.FC<headerProps> = ({ isSticky }) => {
 
+const Frontpage = () => {
 
-const Hidden = () => {
 
 	return (
-	<div 
-	style={{
-		opacity: isSticky ? 0 : 1,
-		transition: 'opacity 10s linear',
-	  }}
-	>
+<div>
 	<p>import React, {'{'} useEffect {'}'} from 'react'; </p>
 	<p>import {'{'} DailyRoutine, getTime, write {'}'} from '../Reality'; </p>
 
@@ -29,30 +21,21 @@ const Hidden = () => {
 	<p><span className="p-20"><span style={{color:'#df3079'}}>write</span>.codes(); </span></p>
 	<span className="p-10"> {'}'}{'}'}; </span>
 
-	<p className="mt-5">const drmsr: React.FC = () ={'>'} {'{'} </p>
+	<p className="mt-5">const Drmsr: React.FC = () ={'>'} {'{'} </p>
 	  <p className="pl-10">useEffect(() ={'>'} {'{'} </p>
 	<p className="pl-20">executeRoutine(getTime.now);</p> 
 	  <p className="pl-10">{'}'}, []);</p> 
 
-	<p className="">  return ( </p></div>
-)}
-
-
-	return (
-				<div className={'border p-5 mt-5 aspect bg-gray-50'}>
-									<Hidden/>
-
-				<p className="pl-10"> {'<'}menu{'>'}</p> 
-				<p onClick={() => alert("Test")} className="pl-20"> {'<'}WhoAmI /{'>'}</p>
-				<p className="pl-20"> {'<'}Stack /{'>'}</p>
-				<p className="pl-10"> {'</'}menu{'>'}</p>
+	<p className="">  return ( </p>
+	
+	<p className="pl-10"> {'<'}menu{'>'}</p> 
+		<FrontpageMenu/>
+	<p className="pl-10"> {'</'}menu{'>'}</p>
 
   				<p className="pl-10">){'}'}; </p>
-				<p className="mt-5">export default drmsr; </p>
+				<p className="mt-5">export default Drmsr; </p>
 				<p></p>
+				</div>
+)}
 
-			</div>
-	)
-}
-
-export default Header;
+export default Frontpage;

@@ -1,7 +1,7 @@
 export default function Footer() {
 	return (
-				<div className={'border p-1 bg-gray-50'}>
-				<code>
-					drmsr</code></div>
+				<div className={'text-center mt-5'}>
+					<h1>drmsr.dev</h1>
+				</div>
 	)
 }

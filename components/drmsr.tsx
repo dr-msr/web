@@ -17,17 +17,17 @@ export function Stack() {
 		return (<div></div>)
 	}
 
-const drmsr: React.FC = () => {
+const Drmsr: React.FC = () => {
 	useEffect(() => {
 	executeRoutine(getTime.now);
 }, []);
 
 return (
-	<>
-	<WhoAmI />
-	<Stack />
-	</>
+	<menu>
+		<WhoAmI />
+		<Stack />
+	</menu>
 
 )};
 
-export default drmsr; 
+export default Drmsr; 
