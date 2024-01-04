@@ -1,4 +1,5 @@
 import FrontpageMenu from "@/components/frontpageMenu";
+import Image from 'next/image'
 
 const Frontpage = () => {
 	return (
@@ -27,6 +28,14 @@ const Frontpage = () => {
 				<p style={{ paddingLeft: 40 }}> {'</'}menu{'>'}</p>
 				<p style={{ paddingLeft: 40 }}>){'}'}; </p>
 				<p className="mt-5">export default Drmsr; </p>
+			</div>
+
+			<div style={{position:"absolute", width:'100%', top:0, left:0, display:"flex", justifyContent:"center"}}>
+				<div>
+
+	
+				</div>
+
 			</div>
 
 
