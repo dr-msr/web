@@ -30,8 +30,8 @@ const FrontpageMenu = () => {
 
 	return (
 		<div>
-			{listContent.map((item) => (
-				<p	onMouseEnter={() => setHoveredStates(item.name)}
+			{listContent.map((item, index) => (
+				<p key={index}	onMouseEnter={() => setHoveredStates(item.name)}
 				onMouseLeave={() => clearHover()}
 				onClick={() => setCurrentContent(item)} className={`pl-20 ${hover(item.name) ? 'bg-gray-500' : null}`}>
 				

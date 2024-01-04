@@ -1,5 +1,4 @@
 
-
 import type { Metadata } from 'next'
 import { Ubuntu_Mono  } from 'next/font/google'
 import './globals.css'
@@ -21,14 +20,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		const currentHour = time.getHours();
 	
 		if (currentHour >= 6 && currentHour < 18) {
-			return 'light'
+			return 'dark'
 		} else {
-			return 'light' 	}
+			return 'dark' 	}
 	}
-
 	
   return (
-    <html lang="en" className={RenderDay()}>
+    <html lang="en" className={'dark'}>
       <body className={inter.className}>{children}</body>
     </html>
   )
