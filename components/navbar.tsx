@@ -28,7 +28,7 @@ export default function Navbar() {
 						style={{ color: hoverHome ? 'red' : 'black', transition: 'color 0.3s' }}>
 						{'>'} drmsr
 					</div>
-					<div>{'> '}{currentContent.title}</div></div>
+					<div><span style={{color:'black'}}>{'> '}{currentContent.title}</span></div></div>
 				);
 		}
 }
