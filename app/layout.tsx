@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		if (currentHour >= 6 && currentHour < 18) {
 			return 'light'
 		} else {
-			return 'dark' 	}
+			return 'light' 	}
 	}
 	
   return (
