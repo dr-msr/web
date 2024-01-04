@@ -17,31 +17,30 @@ export const listContent = [
 	}]
 
 interface Content {
-  title: string;
-  name: string;
-  content: React.JSX.Element;
+	title: string;
+	name: string;
+	content: React.JSX.Element;
 }
 
-
-interface NavigationContextProps {
-  currentContent: Content;
-  setCurrentContent: (content : Content) => void;
+interface NaviProps {
+	currentContent: Content;
+	setCurrentContent: (content : Content) => void;
 }
 
-const NavigationContext = createContext<NavigationContextProps | undefined>(undefined);
+const NaviContext = createContext<NaviProps | undefined>(undefined);
 
 export const Navi: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentContent, setCurrentContent] = useState<Content>(listContent[0]);
-
-  return (
-    <NavigationContext.Provider value={{ currentContent, setCurrentContent }}>
+	return (
+    
+	<NaviContext.Provider value={{ currentContent, setCurrentContent }}>
       {children}
-    </NavigationContext.Provider>
-  );
+    </NaviContext.Provider>
+	);
 };
 
-export const useNavigation = () => {
-  const context = useContext(NavigationContext);
+export const useNavi = () => {
+  const context = useContext(NaviContext);
   if (!context) {
     throw new Error('useNavigation must be used within a NavigationProvider');
   }
