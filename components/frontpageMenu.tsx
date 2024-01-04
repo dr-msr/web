@@ -12,8 +12,8 @@ const FrontpageMenu = () => {
 		setCurrentMenu(item);
 	}
 
-	function hover(key: string) {
-		if (currentMenu == key)
+	function hover(item: string) {
+		if (currentMenu == item)
 		return true
 	}
 

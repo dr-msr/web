@@ -8,17 +8,7 @@ import { useEffect, useState } from "react";
 
 export default function Content() {
 
-	const { setCurrentContent, currentContent } = useNavigation();
-
-
-
-
-	useEffect(() => {
-		setCurrentContent(listContent[0]);
-	},[])
-
-
-
+	const { currentContent } = useNavigation();
 
 	return (
 				<div className={'border p-5 bg-gray-50 transition-all'}>
