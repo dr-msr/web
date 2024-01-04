@@ -1,6 +1,7 @@
 'use client'
 
 import Frontpage from '@/content/frontpage';
+import Stack from '@/content/stack';
 import WhoAmI from '@/content/whoami';
 import React, { createContext, useContext, useState } from 'react';
 
@@ -14,6 +15,11 @@ export const listContent = [
 		title : "whoami.tsx",
 		name : "WhoAmI",
 		content : <WhoAmI />
+	},
+	{ 
+		title : "stack.tsx",
+		name : "Stack",
+		content : <Stack />
 	}]
 
 interface Content {

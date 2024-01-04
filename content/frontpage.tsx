@@ -8,24 +8,24 @@ const Frontpage = () => {
 		<p>import {'{'} DailyRoutine, getTime, write {'}'} from '../Reality'; </p>
 
 		<p className="mt-5">const executeRoutine = {'('} routine: DailyRoutine{')'}: void ={'>'} {'{'}</p>
-		<span className="p-10">if (routine === 'day') {'{'} </span>
-		<p><span className="p-20">write.prescriptions();</span></p>
-		<span className="p-10">{'}'} else if (routine === 'night') {'{'} </span>
-		<p><span className="p-20">write.codes(); </span></p>
-		<span className="p-10"> {'}'}{'}'}; </span>
+		<span style={{paddingLeft:40}}>if (routine === 'day') {'{'} </span>
+		<p><span style={{paddingLeft:80}}>write.prescriptions();</span></p>
+		<span style={{paddingLeft:40}}>{'}'} else if (routine === 'night') {'{'} </span>
+		<p><span style={{paddingLeft:80}}>write.codes(); </span></p>
+		<span style={{paddingLeft:40}}> {'}'}{'}'}; </span>
 
 		<p className="mt-5">const Drmsr: React.FC = () ={'>'} {'{'} </p>
-		<p className="pl-10">useEffect(() ={'>'} {'{'} </p>
-		<p className="pl-20">executeRoutine(getTime.now);</p> 
-		<p className="pl-10">{'}'}, []);</p> 
+		<p style={{paddingLeft:40}}>useEffect(() ={'>'} {'{'} </p>
+		<p style={{paddingLeft:80}}>executeRoutine(getTime.now);</p> 
+		<p style={{paddingLeft:40}}>{'}'}, []);</p> 
 
-		<p className="">return( </p>
-		<p className="pl-10"> {'<'}menu{'>'}</p> 
+		<p>return( </p>
+		<p style={{paddingLeft:40}}> {'<'}menu{'>'}</p> 
 	
 		<FrontpageMenu style={{paddingLeft:80}}/>
 	
-		<p className="pl-10"> {'</'}menu{'>'}</p>
-	  	<p className="pl-10">){'}'}; </p>
+		<p style={{paddingLeft:40}}> {'</'}menu{'>'}</p>
+	  	<p style={{paddingLeft:40}}>){'}'}; </p>
 		<p className="mt-5">export default Drmsr; </p>
 		</div>
 	</div>
