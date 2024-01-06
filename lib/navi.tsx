@@ -31,6 +31,8 @@ export interface Content {
 }
 
 interface NaviProps {
+	isMobile : boolean;
+	setMobile : (item : boolean) => void;
 	currentContent: Content;
 	setCurrentContent: (content : Content) => void;
 	swipe : SwipeableHandlers;
@@ -80,10 +82,12 @@ const swipe = useSwipeable({
 	}
   };
 
+  const [isMobile, setMobile] = useState(false);
+
 
 	return (
     
-	<NaviContext.Provider value={{ currentContent, setCurrentContent, swipe, leftright }}>
+	<NaviContext.Provider value={{ currentContent, setCurrentContent, swipe, leftright, isMobile, setMobile }}>
       {children}
     </NaviContext.Provider>
 	);

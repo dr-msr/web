@@ -7,13 +7,19 @@ import { useEffect } from "react";
 
 
 export default function Container() {
-	const { swipe, leftright } = useNavi();
+	const { swipe, leftright, setMobile } = useNavi();
 	const { anim8content, loopAnim8 } = useAnim8();
 
 
 	useEffect(() => {
 		anim8content();
 		loopAnim8();
+
+		if (window.innerWidth <= 768) {
+			setMobile(true);
+		} else {
+			setMobile(false);
+		}
 
 		document.addEventListener('keydown', leftright);
 		return () => {
