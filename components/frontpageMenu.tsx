@@ -1,4 +1,5 @@
-import { listContent, useNavi } from "@/lib/navi";
+import { useAnim8 } from "@/lib/anim8";
+import { Content, listContent, useNavi } from "@/lib/navi";
 import { CSSProperties, useState } from "react";
 
 
@@ -7,6 +8,8 @@ interface FrontMenuProps {
   }
 
 const FrontpageMenu: React.FC<FrontMenuProps> = ({ style }) => {
+
+	const { blurContent } = useAnim8();
 
 	const [currentMenu, setCurrentMenu] = useState('')
 	const { setCurrentContent } = useNavi();
@@ -24,12 +27,19 @@ const FrontpageMenu: React.FC<FrontMenuProps> = ({ style }) => {
 		setCurrentMenu('');
 	}
 
+	function handleClick(item : Content) {
+		blurContent(),
+		setCurrentContent(item);
+
+		
+	}
+
 	return (
 		<div>
 			{listContent.map((item, index) => (
 				<p key={index}	onMouseEnter={() => setHoveredStates(item.name)}
 				onMouseLeave={() => clearHover()}
-				onClick={() => setCurrentContent(item)} className={`${hover(item.name) ? 'bg-gray-500' : null}`} style={style}>
+				onClick={() => handleClick(item)} className={`${hover(item.name) ? 'bg-gray-500' : null}`} style={style}>
 				
 				<span 
 					style={{ color: hover(item.name) ? 'black' : 'white', transition: 'color 0.3s' }}> 

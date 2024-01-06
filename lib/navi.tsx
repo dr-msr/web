@@ -22,7 +22,7 @@ export const listContent = [
 		content : <Stack />
 	}]
 
-interface Content {
+export interface Content {
 	title: string;
 	name: string;
 	content: React.JSX.Element;

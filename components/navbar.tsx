@@ -1,10 +1,17 @@
-import { listContent, useNavi } from "@/lib/navi";
+'use client'
+
+import { useAnim8 } from "@/lib/anim8";
+import { Content, listContent, useNavi } from "@/lib/navi";
+import Link from "next/link";
+import router from "next/router";
 import { CSSProperties, useState } from "react";
 import { VscGithub, VscTwitter } from "react-icons/vsc";
 
 export default function Navbar() {
 	const { currentContent, setCurrentContent } = useNavi();
 	const [hoverHome, setHoverHome] = useState(false);
+
+	const { blurContent } = useAnim8();
 
 
 	const handleTopButton = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -40,6 +47,11 @@ export default function Navbar() {
 		});
 	};
 
+	const handleContent = (item : Content) => {
+		setCurrentContent(item);
+		blurContent();
+	}
+
 
 
 
@@ -52,7 +64,7 @@ export default function Navbar() {
 						<div 
 							onMouseEnter={() => setHoverHome(true)}
 							onMouseLeave={() => setHoverHome(false)}
-							onClick={() => setCurrentContent(listContent[0])}
+							onClick={() => handleContent(listContent[0])}
 							style={{ 
 								color: hoverHome ? 'white' : 'black', 
 								transition: 'color 0.3s,', 
@@ -62,14 +74,14 @@ export default function Navbar() {
 								paddingLeft:10,
 								paddingRight:10,
 								borderRadius:10,
-								backgroundColor: hoverHome? "gray" : "",
+								backgroundColor: hoverHome? "#374151" : "",
 								}}>
 								drmsr.tsx
 						</div>
 					</div>
 					<div style={TopButtonStyles}>
-						<div onMouseEnter={(e) => handleTopButton(e)}><VscGithub /></div>
-						<div onMouseEnter={(e) => handleTopButton(e)}><VscTwitter /></div>
+					<Link href="https://github.com/dr-msr/" target="_blank"><div style={{padding:5, borderRadius:10}} onMouseEnter={(e) => handleTopButton(e)}><VscGithub /></div></Link>
+					<Link href="https://twitter.com/drmsr_dev" target="_blank"></Link><div style={{padding:5, borderRadius:10}} onMouseEnter={(e) => handleTopButton(e)}><VscTwitter /></div>
 					</div>
 				</div>		
 			)
@@ -81,7 +93,9 @@ export default function Navbar() {
 					<div 
 						onMouseEnter={() => setHoverHome(true)}
 						onMouseLeave={() => setHoverHome(false)}
-						onClick={() => setCurrentContent(listContent[0])}
+						onClick={() => 
+							handleContent(listContent[0])
+						}
 						style={{ 
 							color: hoverHome ? 'white' : 'black', 
 							transition: 'color 0.3s,', 
@@ -91,7 +105,7 @@ export default function Navbar() {
 							paddingLeft:10,
 							paddingRight:10,
 							borderRadius:10,
-							backgroundColor: hoverHome? "gray" : "",
+							backgroundColor: hoverHome? "#374151" : "",
 							}}>
 						drmsr
 					</div>
@@ -109,8 +123,8 @@ export default function Navbar() {
 							
 					</div>
 					<div style={TopButtonStyles}>
-						<div onMouseEnter={(e) => handleTopButton(e)}><VscGithub /></div>
-						<div onMouseEnter={(e) => handleTopButton(e)}><VscTwitter /></div>
+					<Link href="https://github.com/dr-msr/" target="_blank"><div style={{padding:5, borderRadius:10}} onMouseEnter={(e) => handleTopButton(e)}><VscGithub /></div></Link>
+					<Link href="https://twitter.com/drmsr_dev" target="_blank"></Link><div style={{padding:5, borderRadius:10}} onMouseEnter={(e) => handleTopButton(e)}><VscTwitter /></div>
 					</div>
 				</div>		
 			)
@@ -126,5 +140,4 @@ const TopButtonStyles : CSSProperties = {
 	color:"#374151", 
 	flexDirection: 'row', 
 	display:"flex", 
-	gap:10,
 }
