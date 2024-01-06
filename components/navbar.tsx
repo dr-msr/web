@@ -11,7 +11,7 @@ export default function Navbar() {
 	const { currentContent, setCurrentContent } = useNavi();
 	const [hoverHome, setHoverHome] = useState(false);
 
-	const { blurContent } = useAnim8();
+	const { blurContent, enterLeft, enterRight, trigEnterLeft, trigEnterRight } = useAnim8();
 
 
 	const handleTopButton = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -48,8 +48,11 @@ export default function Navbar() {
 	};
 
 	const handleContent = (item : Content) => {
+		blurContent(),
+		trigEnterRight(),
+		trigEnterLeft(),
 		setCurrentContent(item);
-		blurContent();
+
 	}
 
 
@@ -66,15 +69,13 @@ export default function Navbar() {
 							onMouseLeave={() => setHoverHome(false)}
 							onClick={() => handleContent(listContent[0])}
 							style={{ 
-								color: hoverHome ? 'white' : 'black', 
-								transition: 'color 0.3s,', 
-								
+								color: hoverHome ? 'black' : 'white', 
 								borderWidth:0,
-								borderStyle: hoverHome? "solid" : "none",
+								borderStyle: hoverHome? "none" : "solid",
 								paddingLeft:10,
 								paddingRight:10,
 								borderRadius:10,
-								backgroundColor: hoverHome? "#374151" : "",
+								backgroundColor: hoverHome? "" : "#374151",
 								}}>
 								drmsr.tsx
 						</div>
@@ -116,6 +117,14 @@ export default function Navbar() {
 								transition: 'color 0.3s,', 
 								paddingLeft:10,
 								paddingRight:10,
+								backgroundColor: "#374151",
+								color: 'white', 
+								borderRadius:10,
+								borderWidth:0,
+								borderStyle: "none",
+
+
+
 								}}>
 									{currentContent.title}</div>
 							</div>

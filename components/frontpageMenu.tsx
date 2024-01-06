@@ -9,7 +9,7 @@ interface FrontMenuProps {
 
 const FrontpageMenu: React.FC<FrontMenuProps> = ({ style }) => {
 
-	const { blurContent } = useAnim8();
+	const { blurContent, trigEnterLeft, trigEnterRight, } = useAnim8();
 
 	const [currentMenu, setCurrentMenu] = useState('')
 	const { setCurrentContent } = useNavi();
@@ -29,6 +29,8 @@ const FrontpageMenu: React.FC<FrontMenuProps> = ({ style }) => {
 
 	function handleClick(item : Content) {
 		blurContent(),
+		trigEnterRight(),
+		trigEnterLeft(),
 		setCurrentContent(item);
 
 		

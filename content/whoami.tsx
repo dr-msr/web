@@ -1,10 +1,13 @@
 import FrontpageMenu from "@/components/frontpageMenu";
+import { useAnim8 } from "@/lib/anim8";
 
 const WhoAmI = () => {
+	const { enterLeft, enterRight} = useAnim8();
+
 	return (
 	<div>
 
-		<div className="" style={{color:"#6B7280"}}>
+		<div className="" style={{color:"#6B7280", ...enterLeft}}>
 			<p>const WhoAmI   {' = () => {'}</p>
 			<p className="pl-5">return {'('}</p>
 		</div>
@@ -20,7 +23,7 @@ const WhoAmI = () => {
 
 		<FrontpageMenu style={{paddingLeft:10}}/>
 			
-		<div className="" style={{color:"#6B7280", marginTop:5}}>
+		<div className="" style={{color:"#6B7280", marginTop:5, ...enterRight}}>
 			<p>{')};'}</p>
 			<p>export default const WhoAmI;</p>
 		</div>
