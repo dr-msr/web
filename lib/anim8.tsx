@@ -14,8 +14,8 @@ interface Anim8ProviderProps {
 export const Anim8: React.FC<Anim8ProviderProps> = ({ children }) => {
 
 	const [contentStyle, setContentStyle] = useState({
-		filter:'blur(5px)',
-		transition:'filter 1s',
+		filter:'blur(0px)',
+		transition:'',
 	})
 
 	function blurContent() {
