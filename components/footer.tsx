@@ -1,10 +1,8 @@
 import { useAnim8 } from "@/lib/anim8";
-import { Content, listContent, useNavi } from "@/lib/navi";
-import { useEffect, useRef } from "react";
 
 export default function Footer() {
 
-	const { anim8content, styleSwipeLeft, loopAnim8, styleSwipeRight } = useAnim8();
+	const { styleSwipeLeft, styleSwipeRight } = useAnim8();
 
 
 

@@ -1,9 +1,7 @@
-'use client'
 
 import { useAnim8 } from "@/lib/anim8";
 import { Content, listContent, useNavi } from "@/lib/navi";
 import Link from "next/link";
-import router from "next/router";
 import { CSSProperties, useState } from "react";
 import { VscGithub, VscTwitter } from "react-icons/vsc";
 
@@ -11,7 +9,7 @@ export default function Navbar() {
 	const { currentContent, setCurrentContent } = useNavi();
 	const [hoverHome, setHoverHome] = useState(false);
 
-	const { blurContent, enterLeft, enterRight, trigEnterLeft, trigEnterRight } = useAnim8();
+	const { blurContent, trigEnterLeft, trigEnterRight } = useAnim8();
 
 
 	const handleTopButton = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -36,17 +34,6 @@ export default function Navbar() {
 		});
 	  };
 
-
-	const handleNaviBreadcrumb = (e : React.MouseEvent) => {
-		(e.currentTarget as HTMLDivElement).addEventListener('mouseenter', () => {
-
-		});
-
-		(e.currentTarget as HTMLDivElement).addEventListener('mouseleave', () => {
-			
-		});
-	};
-
 	const handleContent = (item : Content) => {
 		blurContent(),
 		trigEnterRight(),
@@ -54,9 +41,6 @@ export default function Navbar() {
 		setCurrentContent(item);
 
 	}
-
-
-
 
 	  
 	if (currentContent.title == "drmsr.tsx") {
