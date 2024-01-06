@@ -82,7 +82,7 @@ export default function Navbar() {
 					</div>
 					<div style={TopButtonStyles}>
 					<Link href="https://github.com/dr-msr/" target="_blank"><div style={{padding:5, borderRadius:10}} onMouseEnter={(e) => handleTopButton(e)}><VscGithub /></div></Link>
-					<Link href="https://twitter.com/drmsr_dev" target="_blank"></Link><div style={{padding:5, borderRadius:10}} onMouseEnter={(e) => handleTopButton(e)}><VscTwitter /></div>
+					<Link href="https://twitter.com/drmsr_dev" target="_blank"><div style={{padding:5, borderRadius:10}} onMouseEnter={(e) => handleTopButton(e)}><VscTwitter /></div></Link>
 					</div>
 				</div>		
 			)
@@ -133,7 +133,7 @@ export default function Navbar() {
 					</div>
 					<div style={TopButtonStyles}>
 					<Link href="https://github.com/dr-msr/" target="_blank"><div style={{padding:5, borderRadius:10}} onMouseEnter={(e) => handleTopButton(e)}><VscGithub /></div></Link>
-					<Link href="https://twitter.com/drmsr_dev" target="_blank"></Link><div style={{padding:5, borderRadius:10}} onMouseEnter={(e) => handleTopButton(e)}><VscTwitter /></div>
+					<Link href="https://twitter.com/drmsr_dev" target="_blank"><div style={{padding:5, borderRadius:10}} onMouseEnter={(e) => handleTopButton(e)}><VscTwitter /></div></Link>
 					</div>
 				</div>		
 			)

@@ -31,7 +31,7 @@ export const Anim8: React.FC<Anim8ProviderProps> = ({ children }) => {
 
 	const [contentStyle, setContentStyle] = useState({
 		filter:'blur(0px)',
-		transition:'filter 1s',
+		transition:'',
 	})
 
 	function blurContent() {
@@ -41,8 +41,8 @@ export const Anim8: React.FC<Anim8ProviderProps> = ({ children }) => {
 		});
 		setTimeout(function () {
 			setContentStyle({
-				filter:'blur(0px)',
-				transition:'filter 1s',
+			filter:'blur(0px)',
+			transition:'',
 			})
 		},300);
 	}
