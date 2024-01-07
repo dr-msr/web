@@ -7,10 +7,7 @@ const WhoAmI = () => {
 	return (
 	<div>
 
-		<div className="" style={{color:"#6B7280", ...enterLeft}}>
-			<p>const WhoAmI   {' = () => {'}</p>
-			<p className="pl-5">return {'('}</p>
-		</div>
+
 			
 		<div style={{marginBottom:40, paddingLeft:10, marginTop:20}}>
 			<p>Hi, I'm Syamirul.</p>
@@ -21,12 +18,7 @@ const WhoAmI = () => {
 			<p>And a student in 42 Kuala Lumpur.</p>
 		</div>
 
-		<FrontpageMenu style={{paddingLeft:10}}/>
 			
-		<div className="" style={{color:"#6B7280", marginTop:5, ...enterRight}}>
-			<p>{')};'}</p>
-			<p>export default const WhoAmI;</p>
-		</div>
 	</div>
 )}
 

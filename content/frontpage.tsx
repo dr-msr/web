@@ -7,7 +7,7 @@ const Frontpage = () => {
 
 	return (
 	<div>
-			<div style={{ color: "#6B7280" }}>
+			<div style={{ color: "#6B7280",}}>
 				
 				<div style={enterLeft}>
 				<p>import React, {'{'} useEffect {'}'} from 'react'; </p>
@@ -31,27 +31,18 @@ const Frontpage = () => {
 				</div>
 
 				<div style={enterRight}>
-				<p>return( </p>
-				<p style={{ paddingLeft: 40 }}> {'<'}menu{'>'}</p>
-
-				<FrontpageMenu style={{ paddingLeft: 80 }} />
-				</div>
-
-				<div style={enterLeft}>
-				<p style={{ paddingLeft: 40 }}> {'</'}menu{'>'}</p>
-				<p style={{ paddingLeft: 40 }}>){'}'}; </p>
+				<p>return() </p>
+				
+				<p>{'}'}; </p>
 				<p className="mt-5">export default Drmsr; </p>
 				</div>
 
-			</div>
 
-			<div style={{position:"absolute", width:'100%', top:0, left:0, display:"flex", justifyContent:"center"}}>
-				<div>
 
-	
-				</div>
 
 			</div>
+
+			
 
 
 		</div>

@@ -1,5 +1,6 @@
 import Content from "@/components/content";
 import Footer from "@/components/footer";
+import FrontpageMenu from "@/components/frontpageMenu";
 import Navbar from "@/components/navbar";
 import { useAnim8 } from "@/lib/anim8";
 import { useNavi } from "@/lib/navi";
@@ -7,7 +8,7 @@ import { useEffect } from "react";
 
 
 export default function Container() {
-	const { swipe, leftright, setMobile } = useNavi();
+	const { swipe, setMobile, isMobile } = useNavi();
 	const { anim8content, loopAnim8 } = useAnim8();
 
 
@@ -21,27 +22,15 @@ export default function Container() {
 			setMobile(false);
 		}
 
-		document.addEventListener('keydown', leftright);
-		return () => {
-		  document.removeEventListener('keydown', leftright);
-		};
-
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 		}, []);
 	
 	return (
 		<div className='container mx-auto relative max-w-xl flex flex-col gap-5' {...swipe}>
 			<Navbar />
+			{ !isMobile && ( <FrontpageMenu />)}
 			<Content />
 			<Footer />
   		</div>
 	)
 }
-
-function anim8content() {
-	throw new Error("Function not implemented.");
-}
-function loopAnim8() {
-	throw new Error("Function not implemented.");
-}
-

@@ -6,6 +6,9 @@ import WhoAmI from '@/content/whoami';
 import React, { createContext, useContext, useState } from 'react';
 import { SwipeableHandlers, useSwipeable } from 'react-swipeable';
 import { useAnim8 } from './anim8';
+import Blog from '@/content/blog';
+import A42KL from '@/content/42';
+import Projects from '@/content/projects';
 
 export const listContent = [
 	{ 
@@ -22,7 +25,22 @@ export const listContent = [
 		title : "stack.tsx",
 		name : "Stack",
 		content : <Stack />
-	}]
+	},
+	{ 
+		title : "blog.tsx",
+		name : "Blog",
+		content : <Blog />
+	},	{ 
+		title : "42.tsx",
+		name : "42",
+		content : <A42KL />
+	},
+	{ 
+		title : "projects.tsx",
+		name : "Projects",
+		content : <Projects />
+	}
+]
 
 export interface Content {
 	title: string;
@@ -40,45 +58,52 @@ interface NaviProps {
 }
 
 const NaviContext = createContext<NaviProps | undefined>(undefined);
-
+var sekarang;
 
 
 export const Navi: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentContent, setCurrentContent] = useState<Content>(listContent[0]);
+  var newIndex;
 
   const { anim8content } = useAnim8();
 
   function getNextContent() {
-	const sekarang = listContent.findIndex((item) => item.name == currentContent.name);
+	sekarang = listContent.findIndex((item) => item.name == currentContent.name);
 	if (sekarang == listContent.length - 1) {
-		setCurrentContent(listContent[0]);
+		newIndex = 0;
 	} else {
-		setCurrentContent(listContent[sekarang + 1]);
+		newIndex = sekarang + 1;
 	}
 	anim8content();
+	return listContent[newIndex];
 }
 
 function getPrevContent() {
-	const sekarang = listContent.findIndex((item) => item.name == currentContent.name);
+	sekarang = listContent.findIndex((item) => item.name == currentContent.name);
+	console.log(listContent);
+	console.log(sekarang);
+	console.log(listContent.length)
 	if (sekarang == 0) {
-		setCurrentContent(listContent[listContent.length - 1]);
+		newIndex = listContent.length - 1;
 	} else {
-		setCurrentContent(listContent[sekarang - 1]);
+		newIndex = sekarang - 1;
 	}
+	
 	anim8content();
+	return listContent[newIndex];
 }
 
 const swipe = useSwipeable({
-	onSwipedRight : () => getPrevContent(),
-	onSwipedLeft : () => getNextContent(),
+	onSwipedRight : () => setCurrentContent(getPrevContent()),
+	onSwipedLeft : () => setCurrentContent(getNextContent()),
   });
 
 
   const leftright = (event: KeyboardEvent) => {
 	if (event.key === 'ArrowLeft') {
-		getPrevContent();
+		setCurrentContent(getPrevContent());
 	} else if (event.key === 'ArrowRight') {
-		getNextContent()
+		setCurrentContent(getNextContent());
 	}
   };
 

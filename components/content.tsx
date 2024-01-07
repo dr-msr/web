@@ -1,9 +1,10 @@
 
 import { useAnim8 } from "@/lib/anim8";
 import { useNavi } from "@/lib/navi";
+import { ContentFooter, ContentHeader } from "./contentDeco";
 
 export default function Content() {
-	const { currentContent } = useNavi();
+	const { currentContent, isMobile } = useNavi();
 	const { contentStyle } = useAnim8();
 		
 	return (
@@ -11,8 +12,12 @@ export default function Content() {
 				style={{
 					borderRadius:5,
 					borderColor:'white',
+					maxHeight: !isMobile ? 512 : '',
+					overflow:'scroll',
 					...contentStyle }} >
-					<div>{currentContent.content}</div>
+					<ContentHeader />
+						<div>{currentContent.content}</div>
+					<ContentFooter />
 				</div>
 				
 	)

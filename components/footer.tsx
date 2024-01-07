@@ -10,11 +10,11 @@ export default function Footer() {
 
 	return (
 				<div className={'text-center'}>
-					<div style={{display:'flex', flexDirection:'row', justifyContent:'center', color:'gray'}}>
+					{ isMobile && (<div style={{display:'flex', flexDirection:'row', justifyContent:'center', color:'gray'}}>
 						<div style={styleSwipeLeft}>{'<< '}</div> 
-						<div style={{paddingLeft:5, paddingRight:5}}>{isMobile ? 'swipe' : 'left | right'}</div> 
+						<div style={{paddingLeft:5, paddingRight:5}}>swipe</div> 
 						<div style={styleSwipeRight}>{' >>'}</div>
-					</div>
+					</div>)}
 					<h1>drmsr.dev</h1>
 				</div>
 	)
