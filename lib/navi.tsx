@@ -75,9 +75,6 @@ export const Navi: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
 function getPrevContent() {
 	sekarang = listContent.findIndex((item) => item.name == currentContent.name);
-	console.log(listContent);
-	console.log(sekarang);
-	console.log(listContent.length)
 	if (sekarang == 0) {
 		newIndex = listContent.length - 1;
 	} else {
