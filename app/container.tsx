@@ -11,7 +11,6 @@ export default function Container() {
 	const { swipe, setMobile, isMobile } = useNavi();
 	const { anim8content, loopAnim8 } = useAnim8();
 
-
 	useEffect(() => {
 		anim8content();
 		loopAnim8();
@@ -31,6 +30,7 @@ export default function Container() {
 			{ !isMobile && ( <FrontpageMenu />)}
 			<Content />
 			<Footer />
+
   		</div>
 	)
 }

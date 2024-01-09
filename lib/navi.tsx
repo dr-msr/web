@@ -62,6 +62,7 @@ var sekarang;
 
 
 export const Navi: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+	const { showfootermenu } = useAnim8();
   const [currentContent, setCurrentContent] = useState<Content>(listContent[0]);
   var newIndex;
 
@@ -96,6 +97,7 @@ function getPrevContent() {
 const swipe = useSwipeable({
 	onSwipedRight : () => setCurrentContent(getPrevContent()),
 	onSwipedLeft : () => setCurrentContent(getNextContent()),
+	onSwipedUp : () => showfootermenu(),
   });
 
 
@@ -107,7 +109,7 @@ const swipe = useSwipeable({
 	}
   };
 
-  const [isMobile, setMobile] = useState(false);
+  const [isMobile, setMobile] = useState(true);
 
 
 	return (

@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "graphql-tag": "^2.12.6",
     "lucide-react": "^0.303.0",
     "next": "14.0.4",
     "prismjs": "^1.29.0",

@@ -6,12 +6,15 @@ interface Anim8Props {
 	enterRight : CSSProperties,
 	styleSwipeLeft : CSSProperties,
 	styleSwipeRight : CSSProperties,
+	footerMenu : CSSProperties,
 
 	blurContent : () => void;
 	trigEnterLeft : () => void;
 	trigEnterRight : () => void;
 	anim8content : () => void;
 	loopAnim8 : () => void
+	hidefootermenu : () => void;
+	showfootermenu : () => void;
 
 };
 
@@ -111,8 +114,6 @@ export const Anim8: React.FC<Anim8ProviderProps> = ({ children }) => {
 
 	const [styleSwipeBlinkRight, setStyleSwipeBlinkRight] = useState(false)
 
-
-
 			function loopAnim8() {
 
 				if (styleSwipeBlinkLeft == false) {
@@ -153,6 +154,37 @@ export const Anim8: React.FC<Anim8ProviderProps> = ({ children }) => {
 			setTimeout(loopAnim8,2000);
 
 
+		
+		const [footerMenu, setFooterMenu] = useState({
+			display:'none',
+			opacity:'0',
+			transform:'translate(0px,-100px)',
+			transition:'display 0.3s opacity 0.3s transform 0.3s'
+		});
+
+		function hidefootermenu() {
+			setFooterMenu({
+				display:'none',
+				opacity:'0',
+				transform:'translate(0px,-100px)',
+				transition:'display 0.3s opacity 0.3s transform 0.3s'
+
+			})
+			return
+		}
+
+		function showfootermenu() {
+			setFooterMenu({
+				display:'flex',
+				opacity:'1',
+				transform:'translate(0px,0px)',
+				transition:'display 0.3s opacity 0.3s transform 0.3s'
+
+			})
+			return
+		}
+
+
 
 	const contextValue: Anim8Props = {
 		contentStyle,
@@ -160,12 +192,15 @@ export const Anim8: React.FC<Anim8ProviderProps> = ({ children }) => {
 		enterRight,
 		styleSwipeLeft,
 		styleSwipeRight,
+		footerMenu,
 	
 		blurContent,
 		trigEnterLeft,
 		trigEnterRight,
 		anim8content,
-		loopAnim8
+		loopAnim8,
+		hidefootermenu,
+		showfootermenu,
 	};
   
 	return (

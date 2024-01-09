@@ -35,6 +35,7 @@ export default function Navbar() {
 	  };
 
 	const handleContent = (item : Content) => {
+		setHoverHome(false),
 		blurContent(),
 		trigEnterRight(),
 		trigEnterLeft(),
