@@ -35,7 +35,6 @@ export default function Content() {
 
 				<div className={'border p-5 bg-gray-50 transition-all dark:bg-gray-700'} 
 				style={{
-					flexGrow:1,
 					borderRadius:5,
 					borderColor:'white',
 					maxHeight: !isMobile ? 512 : '',
