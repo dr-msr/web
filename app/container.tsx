@@ -25,12 +25,14 @@ export default function Container() {
 		}, []);
 	
 	return (
-		<div className='container mx-auto relative max-w-xl flex flex-col gap-5' {...swipe}>
+		<div {...swipe}>
+		<div className='container mx-auto relative max-w-xl flex flex-col gap-5'>
 			<Navbar />
 			{ !isMobile && ( <FrontpageMenu />)}
 			<Content />
 			<Footer />
 
   		</div>
+		  </div>
 	)
 }
