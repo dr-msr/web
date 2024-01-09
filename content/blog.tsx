@@ -8,7 +8,7 @@ import { CSSProperties, useState } from "react";
 
 const Blog = () => {
 	const { loading, error, data } = useQuery(GET_PUBLICATION);
-	const { enterLeft, enterRight, trigEnterLeft } = useAnim8();
+	const { enterLeft, enterRight, trigEnterLeft, contentStyle } = useAnim8();
 	const [ isHovered, setHover ] = useState('');
 
 	function clearHover() {
@@ -33,25 +33,25 @@ const Blog = () => {
 			return { 
 				color : renderHover(item.node.title) ? "black" : "white",
 				backgroundColor : renderHover(item.node.title) ? "white" : "#374151",
-				paddingLeft:15,
+				paddingLeft:renderHover(item.node.title) ? 30 : 15,
 				paddingRight:5,
 				display:"flex",
 				flexDirection:"row",
 				justifyContent:"space-between",
 				alignItems:"flex-start",
-				...enterLeft,
+				transition:'padding 0.3s',
 			 }
 		} else {
 			return { 
 				color : renderHover(item.node.title) ? "black" : "white",
 				backgroundColor : renderHover(item.node.title) ? "white" : "#374151",
-				paddingLeft:15,
+				paddingLeft:renderHover(item.node.title) ? 30 : 15,
 				paddingRight:5,
 				display:"flex",
 				flexDirection:"row",
 				justifyContent:"space-between",
 				alignItems:"flex-start",
-				...enterRight
+				transition:'padding 0.3s',
 			 }
 		}
 		
@@ -67,7 +67,7 @@ const Blog = () => {
 			<div className="pl-10 mt-5" style={{marginBottom:40}}>
 				<div>Blog <span style={{fontStyle:"italic", color:"green", opacity:0.9}}><Link href="https://drmsr.hashnode.dev" target="_blank">{'["https://drmsr.hashnode.dev"]'}</Link></span>
 				<p style={{marginTop:10, marginBottom:10}}> Check out my Hashnode blog, where I regularly share my programming journey, coding tips, and thoughts on career growth.</p></div>
-				<div style={{display:"flex", flexDirection:"column", gap:0}}>
+				<div style={{display:"flex", flexDirection:"column", gap:0, ...contentStyle}}>
 				{ listPost.map((item, index) => (
 					<Link href={item.node.url} target="_blank">
 					<div 

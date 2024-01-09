@@ -7,6 +7,7 @@ interface Anim8Props {
 	styleSwipeLeft : CSSProperties,
 	styleSwipeRight : CSSProperties,
 	footerMenu : CSSProperties,
+	puls8 : CSSProperties,
 
 	blurContent : () => void;
 	trigEnterLeft : () => void;
@@ -113,8 +114,30 @@ export const Anim8: React.FC<Anim8ProviderProps> = ({ children }) => {
 	})
 
 	const [styleSwipeBlinkRight, setStyleSwipeBlinkRight] = useState(false)
+	const [ puls8, setPuls8 ] = useState({
+		transition:'box-shadow 2s',
+		boxShadow:'0 0 6px 3px #fff, 0 0 8px 5px #fff'
+	})
+
+	const [oscillate, setOsccilate] = useState(false)
 
 			function loopAnim8() {
+
+				if (oscillate) {
+					setPuls8({
+						transition:'box-shadow 2s',
+						boxShadow:''
+					})
+				} else {
+					setPuls8({
+						transition:'box-shadow 2s',
+						boxShadow:'0 0 6px 3px #fff, 0 0 8px 5px #fff'
+					})
+				}
+
+				setOsccilate(!oscillate);
+
+
 
 				if (styleSwipeBlinkLeft == false) {
 					setStyleSwipeLeft({
@@ -193,6 +216,7 @@ export const Anim8: React.FC<Anim8ProviderProps> = ({ children }) => {
 		styleSwipeLeft,
 		styleSwipeRight,
 		footerMenu,
+		puls8,
 	
 		blurContent,
 		trigEnterLeft,

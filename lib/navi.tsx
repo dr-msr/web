@@ -2,7 +2,6 @@
 
 import Frontpage from '@/content/frontpage';
 import Stack from '@/content/stack';
-import WhoAmI from '@/content/whoami';
 import React, { createContext, useContext, useState } from 'react';
 import { SwipeableHandlers, useSwipeable } from 'react-swipeable';
 import { useAnim8 } from './anim8';
@@ -15,11 +14,6 @@ export const listContent = [
 		title : "drmsr.tsx",
 		name : "Frontpage",
 		content : <Frontpage />
-	},
-	{ 
-		title : "whoami.tsx",
-		name : "WhoAmI",
-		content : <WhoAmI />
 	},
 	{ 
 		title : "stack.tsx",
