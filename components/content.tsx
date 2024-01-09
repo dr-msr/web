@@ -31,18 +31,20 @@ export default function Content() {
 
 	} else {
 		return (
+			<div style={{display:"flex", flexDirection:"column", justifyContent:"", flexGrow:1, height:'80vh'}}>
+
 				<div className={'border p-5 bg-gray-50 transition-all dark:bg-gray-700'} 
 				style={{
 					flexGrow:1,
 					borderRadius:5,
 					borderColor:'white',
 					maxHeight: !isMobile ? 512 : '',
-					height:'80vh',
-					overflow:'hidden',
+					overflow:'scroll',
 					...contentStyle }} >
 					<ContentHeader />
 						<div>{currentContent.content}</div>
 					<ContentFooter />
+				</div>
 				</div>
 				
 	)
