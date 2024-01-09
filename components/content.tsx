@@ -11,7 +11,7 @@ export default function Content() {
 	
 	if (currentContent == listContent[0]) {
 		return (
-			<div style={{display:"flex", flexDirection:"column", justifyContent:"space-between", gap:20, flexGrow:1}}>
+			<div style={{display:"flex", flexDirection:"column", justifyContent:"", gap:20, flexGrow:1, height:'100vh'}}>
 			<div style={contentStyle}>
 				<Image alt="" width="768" height="510" src="https://ghchart.rshah.org/374151/dr-msr" />	
 			</div>
