@@ -11,7 +11,7 @@ export default function Content() {
 	
 	if (currentContent == listContent[0]) {
 		return (
-			<div style={{display:"flex", flexDirection:"column", justifyContent:"", gap:20, flexGrow:1, height:'100vh'}}>
+			<div style={{display:"flex", flexDirection:"column", justifyContent:"", gap:20, flexGrow:1, height:'80vh'}}>
 			<div style={contentStyle}>
 				<Image alt="" width="768" height="510" src="https://ghchart.rshah.org/374151/dr-msr" />	
 			</div>
@@ -37,7 +37,8 @@ export default function Content() {
 					borderRadius:5,
 					borderColor:'white',
 					maxHeight: !isMobile ? 512 : '',
-					overflow:'scroll',
+					height:'80vh',
+					overflow:'hidden',
 					...contentStyle }} >
 					<ContentHeader />
 						<div>{currentContent.content}</div>
