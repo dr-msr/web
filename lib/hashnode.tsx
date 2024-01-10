@@ -14,8 +14,6 @@ export const GET_PUBLICATION = gql`
             title
             url
             publishedAt
-            content {
-              markdown
             }
           }
         }
